@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional - Data Analyst & Data Scientist especializado en análisis predictivo, visualización de datos y machine learning">
+    <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, Machine Learning, Data Visualization, Tableau, Power BI">
+    <meta name="author" content="Tu Nombre">
+    <title>Tu Nombre - Data Analyst & Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Matrix Rain Easter Egg -->
+    <canvas id="matrixCanvas" class="matrix-bg"></canvas>
+    
+    <!-- Cursor personalizado -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-terminal"></i>
+                <span class="brand-text">
+                    <span class="brand-bracket">&lt;</span>
+                    TuNombre
+                    <span class="brand-bracket">/&gt;</span>
+                </span>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="matrix-toggle" id="matrixToggle" aria-label="Toggle Matrix Mode" title="Modo Matrix (doble click)">
+                    <i class="fas fa-code"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#certifications" class="nav-link">Certificaciones</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-label">
+                        <span class="status-dot"></span>
+                        <span>Disponible para proyectos</span>
+                        <span class="label-badge">Hiring</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Hola, soy</span>
+                        <span class="gradient-text typing-container">
+                            <span class="typing-text" id="heroName">Tu Nombre</span>
+                            <span class="cursor-blink">|</span>
+                        </span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="code-bracket">&lt;</span>
+                        <span class="role-text" id="roleText">Data Analyst & Data Scientist</span>
+                        <span class="code-bracket">/&gt;</span>
+                    </h2>
+                    <p class="hero-description">
+                        Transformo <strong>datos complejos</strong> en <strong>insights accionables</strong> mediante 
+                        análisis estadístico, machine learning y visualizaciones impactantes. 
+                        <span class="highlight-text">Especializado en optimización de procesos</span> y 
+                        toma de decisiones basada en datos.
+                    </p>
+                    
+                    <!-- Stats Grid Épica -->
+                    <div class="hero-stats-grid">
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="25" data-suffix="+">0</span>
+                                <span class="stat-label">Proyectos Completados</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="8" data-suffix="+">0</span>
+                                <span class="stat-label">Certificaciones</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="1000" data-suffix="+">0</span>
+                                <span class="stat-label">Tazas de Café</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+                                <span class="stat-label">Líneas de Código</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="2" data-suffix="M+">0</span>
+                                <span class="stat-label">Datos Analizados</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card" data-stat>
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-target="365" data-suffix="">0</span>
+                                <span class="stat-label">Días de Streak</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="stat-progress-bar" style="width: 0%" data-progress="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary btn-glow">
+                            <span class="btn-content">
+                                <i class="fas fa-rocket"></i>
+                                <span>Explorar Proyectos</span>
+                            </span>
+                            <span class="btn-shine"></span>
+                        </a>
+                        <a href="assets/docs/cv.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i>
+                            <span>Descargar CV</span>
+                        </a>
+                        <button class="btn btn-icon" id="surpriseBtn" title="¿Te atreves?">
+                            <i class="fas fa-question"></i>
+                        </button>
+                    </div>
+
+                    <div class="hero-social">
+                        <a href="https://github.com/tuusuario" target="_blank" aria-label="GitHub" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <span class="social-tooltip">GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/tuusuario" target="_blank" aria-label="LinkedIn" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="social-tooltip">LinkedIn</span>
+                        </a>
+                        <a href="https://kaggle.com/tuusuario" target="_blank" aria-label="Kaggle" class="social-link">
+                            <i class="fab fa-kaggle"></i>
+                            <span class="social-tooltip">Kaggle</span>
+                        </a>
+                        <a href="mailto:tu@email.com" aria-label="Email" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                            <span class="social-tooltip">Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="profile-orbit orbit-1"></div>
+                        <div class="profile-orbit orbit-2"></div>
+                        <div class="profile-orbit orbit-3"></div>
+                        <div class="profile-glow"></div>
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring-2"></div>
+                        <img src="assets/images/profile.jpg" alt="Tu Nombre - Data Analyst" id="profileImg" class="profile-img">
+                        <div class="profile-badge">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <!-- GitHub Contribution Style -->
+                    <div class="contribution-graph">
+                        <div class="contribution-title">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Activity</span>
+                        </div>
+                        <div class="contribution-grid" id="contributionGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll para descubrir</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-user-circle"></i>
+                    Conóceme mejor
+                </span>
+                <h2 class="section-title">
+                    <span class="title-word">Sobre</span>
+                    <span class="title-word gradient-text">Mí</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-main">
+                    <div class="about-text">
+                        <div class="text-highlight-box">
+                            <div class="highlight-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h3>Data Analyst apasionado por descubrir historias en los datos</h3>
+                        </div>
+                        
+                        <p class="lead-paragraph">
+                            Con más de <strong class="highlight-text">X años de experiencia</strong> en análisis de datos 
+                            y ciencia de datos, me especializo en convertir datos complejos en 
+                            <strong>insights estratégicos</strong> que impulsan decisiones empresariales inteligentes.
+                        </p>
+                        
+                        <p>
+                            Mi enfoque combina <strong class="gradient-text">rigor estadístico</strong> con 
+                            <strong class="gradient-text">creatividad analítica</strong>, permitiéndome identificar 
+                            patrones ocultos y oportunidades de mejora que otros pasan por alto.
+                        </p>
+
+                        <p>
+                            He trabajado en proyectos que van desde análisis de comportamiento de usuarios hasta 
+                            modelos predictivos de churn y optimización de procesos, siempre buscando el 
+                            <strong>máximo impacto business</strong>.
+                        </p>
+
+                        <blockquote class="epic-quote">
+                            <div class="quote-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <p class="quote-text">
+                                "Los datos son el nuevo petróleo, pero sin análisis son solo ruido. 
+                                Mi trabajo es encontrar la <span class="gradient-text">señal que impulsa el cambio</span>."
+                            </p>
+                            <div class="quote-author">- Tu filosofía de trabajo</div>
+                        </blockquote>
+
+                        <!-- Fun Facts -->
+                        <div class="fun-facts">
+                            <h4><i class="fas fa-lightbulb"></i> Fun Facts</h4>
+                            <div class="facts-grid">
+                                <div class="fact-item">
+                                    <i class="fas fa-moon"></i>
+                                    <span>Desarrollador nocturno certificado</span>
+                                </div>
+                                <div class="fact-item">
+                                    <i class="fas fa-bug"></i>
+                                    <span>Cazador de bugs profesional</span>
+                                </div>
+                                <div class="fact-item">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Convertidor de café en código</span>
+                                </div>
+                                <div class="fact-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Adicto a las visualizaciones</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Análisis Avanzado</h4>
+                            <p>Experiencia en análisis exploratorio, estadística inferencial y modelado predictivo</p>
+                            <div class="card-footer">
+                                <span class="tag">Python</span>
+                                <span class="tag">R</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Machine Learning</h4>
+                            <p>Desarrollo de modelos ML para clasificación, regresión y clustering</p>
+                            <div class="card-footer">
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">TensorFlow</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Visualización</h4>
+                            <p>Creación de dashboards interactivos y storytelling con datos</p>
+                            <div class="card-footer">
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Plotly</span>
+                            </div>
+                        </div>
+
+                        <div class="highlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Big Data</h4>
+                            <p>Gestión y análisis de grandes volúmenes de datos distribuidos</p>
+                            <div class="card-footer">
+                                <span class="tag">Spark</span>
+                                <span class="tag">Hadoop</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-tools"></i>
+                    Mi Arsenal
+                </span>
+                <h2 class="section-title">
+                    <span class="title-word">Habilidades</span>
+                    <span class="title-word gradient-text">&</span>
+                    <span class="title-word">Tecnologías</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-container">
+                <!-- Categorías de Skills -->
+                <div class="skills-tabs">
+                    <button class="skill-tab active" data-category="all">
+                        <i class="fas fa-infinity"></i> Todas
+                    </button>
+                    <button class="skill-tab" data-category="languages">
+                        <i class="fas fa-code"></i> Lenguajes
+                    </button>
+                    <button class="skill-tab" data-category="tools">
+                        <i class="fas fa-wrench"></i> Herramientas
+                    </button>
+                    <button class="skill-tab" data-category="frameworks">
+                        <i class="fas fa-layer-group"></i> Frameworks
+                    </button>
+                    <button class="skill-tab" data-category="data">
+                        <i class="fas fa-database"></i> Data Stack
+                    </button>
+                </div>
+
+                <!-- Grid de Skills con Progreso -->
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Lenguajes -->
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon python-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Python</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95" style="width: 0%">
+                                    <span class="progress-text">95%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon sql-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>SQL</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90" style="width: 0%">
+                                    <span class="progress-text">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>PostgreSQL</span>
+                                <span>MySQL</span>
+                                <span>BigQuery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="languages">
+                        <div class="skill-icon r-icon">
+                            <i class="fab fa-r-project"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>R</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85" style="width: 0%">
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>ggplot2</span>
+                                <span>dplyr</span>
+                                <span>tidyr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas -->
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-icon tableau-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Tableau</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88" style="width: 0%">
+                                    <span class="progress-text">88%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Dashboards</span>
+                                <span>Stories</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-icon powerbi-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Power BI</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85" style="width: 0%">
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>DAX</span>
+                                <span>M Query</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-icon excel-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Excel</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="92" style="width: 0%">
+                                    <span class="progress-text">92%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>VBA</span>
+                                <span>Power Query</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="skill-card" data-category="frameworks">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>TensorFlow</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80" style="width: 0%">
+                                    <span class="progress-text">80%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Keras</span>
+                                <span>Neural Networks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frameworks">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Scikit-learn</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90" style="width: 0%">
+                                    <span class="progress-text">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>ML</span>
+                                <span>Preprocessing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frameworks">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Streamlit</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="87" style="width: 0%">
+                                    <span class="progress-text">87%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Web Apps</span>
+                                <span>Dashboards</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Stack -->
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>AWS</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="82" style="width: 0%">
+                                    <span class="progress-text">82%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>S3</span>
+                                <span>Redshift</span>
+                                <span>Athena</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Apache Spark</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="78" style="width: 0%">
+                                    <span class="progress-text">78%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>PySpark</span>
+                                <span>Big Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="data">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Git & GitHub</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="93" style="width: 0%">
+                                    <span class="progress-text">93%</span>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Version Control</span>
+                                <span>CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-rocket"></i>
+                    Mi Trabajo
+                </span>
+                <h2 class="section-title">
+                    <span class="title-word">Proyectos</span>
+                    <span class="title-word gradient-text">Destacados</span>
+                </h2>
+                <div class="section-line"></div>
+                <p class="section-description">
+                    Una selección de mis proyectos más impactantes en análisis de datos y machine learning
+                </p>
+            </div>
+
+            <!-- Filtros de Proyectos -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Todos
+                </button>
+                <button class="filter-btn" data-filter="machine-learning">
+                    <i class="fas fa-robot"></i> Machine Learning
+                </button>
+                <button class="filter-btn" data-filter="visualization">
+                    <i class="fas fa-chart-bar"></i> Visualización
+                </button>
+                <button class="filter-btn" data-filter="analysis">
+                    <i class="fas fa-search"></i> Análisis
+                </button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <article class="project-card" data-category="machine-learning">
+                    <div class="project-image">
+                        <img src="assets/images/project1.jpg" alt="Predicción de Churn" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Predicción de Churn de Clientes</h3>
+                            <div class="project-category">
+                                <i class="fas fa-robot"></i>
+                                Machine Learning
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Modelo predictivo que identifica clientes en riesgo de abandono con 89% de precisión, 
+                            permitiendo acciones preventivas que redujeron el churn en un 23%.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <span>89% Accuracy</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>23% Reducción Churn</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="project-card" data-category="visualization">
+                    <div class="project-image">
+                        <img src="assets/images/project2.jpg" alt="Dashboard Ventas" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Dashboard Ejecutivo de Ventas</h3>
+                            <div class="project-category">
+                                <i class="fas fa-chart-bar"></i>
+                                Visualización
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Dashboard interactivo en Tableau que consolidó datos de múltiples fuentes, 
+                            mejorando la velocidad de toma de decisiones en un 40%.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ETL</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>50+ Usuarios</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>40% Más Rápido</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="project-card" data-category="analysis">
+                    <div class="project-image">
+                        <img src="assets/images/project3.jpg" alt="Análisis Comportamiento" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Análisis de Comportamiento de Usuarios</h3>
+                            <div class="project-category">
+                                <i class="fas fa-search"></i>
+                                Análisis
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Análisis profundo de patrones de uso que identificó 5 segmentos de usuarios y 
+                            optimizó las estrategias de engagement, aumentando la retención en un 35%.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">K-means</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-database"></i>
+                                <span>2M+ Eventos</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-percentage"></i>
+                                <span>35% Retención</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4 -->
+                <article class="project-card" data-category="machine-learning">
+                    <div class="project-image">
+                        <img src="assets/images/project4.jpg" alt="Detección Fraude" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Sistema de Detección de Fraude</h3>
+                            <div class="project-category">
+                                <i class="fas fa-robot"></i>
+                                Machine Learning
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Modelo de detección de anomalías en transacciones financieras con 94% de precisión 
+                            y menos de 2% de falsos positivos, procesando 10K+ transacciones por minuto.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Isolation Forest</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>94% Precisión</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>10K+ TPS</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 5 -->
+                <article class="project-card" data-category="visualization">
+                    <div class="project-image">
+                        <img src="assets/images/project5.jpg" alt="Dashboard COVID" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>COVID-19 Analytics Dashboard</h3>
+                            <div class="project-category">
+                                <i class="fas fa-chart-bar"></i>
+                                Visualización
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Dashboard en tiempo real para seguimiento de métricas COVID-19, con mapas interactivos 
+                            y predicciones de tendencias utilizadas por 100K+ usuarios.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>100K+ Usuarios</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-globe"></i>
+                                <span>Global Coverage</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 6 -->
+                <article class="project-card" data-category="analysis">
+                    <div class="project-image">
+                        <img src="assets/images/project6.jpg" alt="Optimización Precios" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Optimización de Precios Dinámicos</h3>
+                            <div class="project-category">
+                                <i class="fas fa-search"></i>
+                                Análisis
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Sistema de pricing dinámico basado en análisis de elasticidad, competencia y demanda 
+                            que incrementó los márgenes en un 18% sin afectar volumen de ventas.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">R</span>
+                            <span class="tech-tag">Prophet</span>
+                            <span class="tech-tag">Shiny</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>18% Margen</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>ROI 5:1</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="projects-cta">
+                <a href="https://github.com/tuusuario" target="_blank" class="btn btn-primary btn-glow">
+                    <span class="btn-content">
+                        <i class="fab fa-github"></i>
+                        <span>Ver Más en GitHub</span>
+                    </span>
+                    <span class="btn-shine"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-certificate"></i>
+                    Credenciales
+                </span>
+                <h2 class="section-title">
+                    <span class="title-word">Certificaciones</span>
+                    <span class="title-word gradient-text">&</span>
+                    <span class="title-word">Logros</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="cert-card featured">
+                    <div class="cert-badge">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Google Data Analytics Professional</h3>
+                        <p class="cert-issuer">Google</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2024</p>
+                        <div class="cert-skills">
+                            <span>Data Analysis</span>
+                            <span>SQL</span>
+                            <span>R</span>
+                            <span>Tableau</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>AWS Certified Data Analytics</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2024</p>
+                        <div class="cert-skills">
+                            <span>AWS</span>
+                            <span>Big Data</span>
+                            <span>Analytics</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Python for Data Science</h3>
+                        <p class="cert-issuer">IBM</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2023</p>
+                        <div class="cert-skills">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Tableau Desktop Specialist</h3>
+                        <p class="cert-issuer">Tableau</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2024</p>
+                        <div class="cert-skills">
+                            <span>Tableau</span>
+                            <span>Viz</span>
+                            <span>Dashboards</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>SQL for Data Analysis</h3>
+                        <p class="cert-issuer">Udacity</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2023</p>
+                        <div class="cert-skills">
+                            <span>SQL</span>
+                            <span>Queries</span>
+                            <span>Optimization</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Machine Learning Specialization</h3>
+                        <p class="cert-issuer">Stanford / Coursera</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2023</p>
+                        <div class="cert-skills">
+                            <span>ML</span>
+                            <span>Deep Learning</span>
+                            <span>Neural Networks</span>
+                        </div>
+                        <a href="#" class="cert-link" target="_blank">
+                            Ver Credencial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-paper-plane"></i>
+                    Ponte en contacto
+                </span>
+                <h2 class="section-title">
+                    <span class="title-word">Hablemos de tu</span>
+                    <span class="title-word gradient-text">Próximo Proyecto</span>
+                </h2>
+                <div class="section-line"></div>
+                <p class="section-description">
+                    ¿Tienes un proyecto de datos en mente? ¿Buscas colaboración en análisis o machine learning? 
+                    <strong>¡Me encantaría escucharte!</strong>
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:tu@email.com">tu@email.com</a>
+                            <p>Respondo en menos de 24h</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/tuusuario" target="_blank">@tuusuario</a>
+                            <p>Conectemos profesionalmente</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/tuusuario" target="_blank">@tuusuario</a>
+                            <p>Revisa mi código</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-kaggle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Kaggle</h4>
+                            <a href="https://kaggle.com/tuusuario" target="_blank">@tuusuario</a>
+                            <p>Competiciones y datasets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i>
+                                    Nombre
+                                </label>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre" autocomplete="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Asunto
+                            </label>
+                            <input type="text" id="subject" name="subject" required placeholder="¿En qué puedo ayudarte?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Mensaje
+                            </label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-glow">
+                            <span class="btn-content">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Enviar Mensaje</span>
+                            </span>
+                            <span class="btn-shine"></span>
+                        </button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>¡Mensaje Enviado!</h3>
+                        <p>Gracias por contactarme. Te responderé pronto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Terminal Interactivo -->
+            <div class="terminal-section">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <span class="terminal-title">tu-nombre@portfolio:~$</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-output" id="terminalOutput">
+                            <div class="terminal-line">
+                                <span class="prompt">visitor@portfolio:~$</span>
+                                <span class="command">cat mensaje.txt</span>
+                            </div>
+                            <div class="terminal-line output">
+                                "Gracias por visitar mi portfolio. Siempre abierto a nuevas oportunidades."
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">visitor@portfolio:~$</span>
+                                <span class="command">ls -la stats/</span>
+                            </div>
+                            <div class="terminal-line output">
+                                -rw-r--r-- 1 user staff  2048 Feb 01 2026 coffee_consumed.log
+                            </div>
+                            <div class="terminal-line output">
+                                -rw-r--r-- 1 user staff 50000 Feb 01 2026 code_written.py
+                            </div>
+                            <div class="terminal-line output">
+                                -rw-r--r-- 1 user staff   365 Feb 01 2026 github_streak.txt
+                            </div>
+                            <div class="terminal-line typing">
+                                <span class="prompt">visitor@portfolio:~$</span>
+                                <span class="command"><span class="typing-cursor">_</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <i class="fas fa-terminal"></i>
+                            <span>TuNombre.io</span>
+                        </div>
+                        <p class="brand-description">
+                            Data Analyst & Data Scientist apasionado por transformar datos en valor.
+                        </p>
+                        <div class="footer-stats">
+                            <div class="mini-stat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Tu Ciudad, País</span>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Disponible para freelance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-links-group">
+                        <div class="footer-links-column">
+                            <h4>Navegación</h4>
+                            <ul>
+                                <li><a href="#home">Inicio</a></li>
+                                <li><a href="#about">Sobre Mí</a></li>
+                                <li><a href="#skills">Habilidades</a></li>
+                                <li><a href="#projects">Proyectos</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-links-column">
+                            <h4>Recursos</h4>
+                            <ul>
+                                <li><a href="#certifications">Certificaciones</a></li>
+                                <li><a href="assets/docs/cv.pdf" download>Descargar CV</a></li>
+                                <li><a href="#contact">Contacto</a></li>
+                                <li><a href="#" id="easterEggLink">🥚</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-links-column">
+                            <h4>Sígueme</h4>
+                            <div class="footer-social">
+                                <a href="https://github.com/tuusuario" target="_blank" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/tuusuario" target="_blank" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://kaggle.com/tuusuario" target="_blank" aria-label="Kaggle">
+                                    <i class="fab fa-kaggle"></i>
+                                </a>
+                                <a href="mailto:tu@email.com" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>
+                            &copy; 2025 Tu Nombre. Todos los derechos reservados. 
+                            <span class="separator">|</span>
+                            Hecho con <i class="fas fa-heart heartbeat"></i> y <i class="fas fa-coffee rotate"></i>
+                        </p>
+                    </div>
+                    <div class="footer-meta">
+                        <span class="view-count">
+                            <i class="fas fa-eye"></i>
+                            <span id="viewCount">1,234</span> visitas
+                        </span>
+                        <span class="last-updated">
+                            <i class="fas fa-sync-alt"></i>
+                            Actualizado Feb 2026
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top -->
+        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Easter Egg Modal -->
+    <div class="modal" id="easterEggModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="egg-animation">
+                    <i class="fas fa-egg"></i>
+                </div>
+                <h2>🎉 ¡Easter Egg Encontrado! 🎉</h2>
+                <p>¡Felicitaciones! Has descubierto uno de los secretos de este portfolio.</p>
+                <div class="achievement">
+                    <i class="fas fa-trophy"></i>
+                    <span>Achievement Unlocked: Curioso Explorador</span>
+                </div>
+                <p class="secret-message">
+                    "Los mejores analistas son aquellos que exploran cada rincón de los datos.<br>
+                    Tú claramente eres uno de ellos. 🚀"
+                </p>
+                <div class="egg-stats">
+                    <div class="egg-stat">
+                        <i class="fas fa-search"></i>
+                        <span>Nivel de curiosidad: <strong>100%</strong></span>
+                    </div>
+                    <div class="egg-stat">
+                        <i class="fas fa-star"></i>
+                        <span>Huevos encontrados: <strong id="eggsFound">1</strong>/3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
